@@ -1,7 +1,7 @@
 package hr.oknivk.aoc.common
 
 import java.io.{File, PrintWriter}
-import java.nio.file.{Files, Path, Paths}
+import java.nio.file.{Files, Paths}
 
 import io.Source._
 import scalaj.http.Http
@@ -18,9 +18,7 @@ class API(basePath: String, year: Int, day: Int, cookie: String) {
   Files.createDirectories(Paths.get(outputPath))
 
   private def downloadInput(): Unit = {
-    val w = new PrintWriter(inputPath)
-    w.write(client.asString.body)
-    w.close()
+    new PrintWriter(inputPath) { write(client.asString.body); close() }
   }
 
   private def readInput(): List[String] = {

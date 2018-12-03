@@ -1,11 +1,14 @@
 package hr.oknivk.aoc.common
 
-class Day(config: Config, part1: Solution, part2: Solution) {
+abstract class Day(config: Config){
 
   val api: API = API.fromConfig(config)
 
+  protected def part1(input: List[String]): String
+  protected def part2(input: List[String]): String
+
   def run(): Unit = {
-    api.submitAnswer(part1.solve(api.input), part2.solve(api.input))
+    api.submitAnswer(part1(api.input), part2(api.input))
   }
 
 }
