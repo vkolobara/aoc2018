@@ -11,3 +11,9 @@ a
 1src/main/scala/hr/oknivk/aoc2018/common/AOC.scala,d/d/dd12a73b2c05869b940ee0314e71695bb59fb5c2
 d
 4src/main/scala/hr/oknivk/aoc2018/common/Solver.scala,5/8/589ecda272ed19614ef7c238c155fcd129c06097
+a
+1src/main/scala/hr/oknivk/aoc2018/day2/Part1.scala,1/c/1cb8ff0f3705108ce9f16f0b5a27a976977bce5c
+a
+1src/main/scala/hr/oknivk/aoc2018/day2/Part2.scala,2/7/278cb2fc4656ad07d82a671a9588349a9cfad755
+`
+0src/main/scala/hr/oknivk/aoc2018/day2/Main.scala,5/1/51f8dc93ec113b31947f44283c6321460351ae3e
