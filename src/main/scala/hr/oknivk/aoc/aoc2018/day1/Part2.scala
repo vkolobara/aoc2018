@@ -1,10 +1,8 @@
-package hr.oknivk.aoc2018.day1
+package hr.oknivk.aoc.aoc2018.day1
 
-import hr.oknivk.aoc2018.common.Solution
+import hr.oknivk.aoc.common.Solution
 
 class Part2 extends Solution {
-  override def name: String = "day1-part2"
-
   override def solve(input: List[String]): String = {
     def f(freqs: Stream[Int], visited: Set[Int]): Int = {
       if (visited.contains(freqs.head)) {

@@ -1,11 +1,11 @@
-package hr.oknivk.aoc2018.common
+package hr.oknivk.aoc.common
 
-class RunDay(part1: Solution, part2: Solution) {
+class Day(config: Config, part1: Solution, part2: Solution) {
 
-  def run (configAOC: Config): Unit = {
-    val input = Util.getData(configAOC.inputPath, configAOC.year, configAOC.day)
-    part1.solve(input)
-    part2.solve(input)
+  val api: API = API.fromConfig(config)
+
+  def run(): Unit = {
+    api.submitAnswer(part1.solve(api.input), part2.solve(api.input))
   }
 
 }

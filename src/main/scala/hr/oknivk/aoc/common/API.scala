@@ -1,4 +1,4 @@
-package hr.oknivk.aoc2018.common
+package hr.oknivk.aoc.common
 
 import java.io.{File, PrintWriter}
 import java.nio.file.{Files, Path, Paths}
@@ -10,29 +10,28 @@ import scalaj.http.Http
 class API(basePath: String, year: Int, day: Int, cookie: String) {
 
   private val url = f"https://adventofcode.com/$year%d/day/$day%d/input"
-  private val client = Http(url)
-  private lazy val inputPath = Array(basePath, "input", year.toString, day.toString).mkString(File.separator)
-  private lazy val outputPath = Array(basePath, "output", year.toString, day.toString).mkString(File.separator)
+  private val client = Http(url).header("cookie", cookie)
+  private lazy val inputPath = Array(basePath, year.toString, "input", day.toString).mkString(File.separator)
+  private lazy val outputPath = Array(basePath, year.toString, "output", day.toString).mkString(File.separator)
 
-  Files.createDirectories(Paths.get(inputPath))
+  Files.createDirectories(Paths.get(inputPath).getParent)
   Files.createDirectories(Paths.get(outputPath))
 
-  private def downloadInput(downloadPath: String, year: Int, day: Int): Unit = {
-    client.header("cookie", cookie)
-    val w = new PrintWriter(downloadPath)
+  private def downloadInput(): Unit = {
+    val w = new PrintWriter(inputPath)
     w.write(client.asString.body)
     w.close()
   }
 
-  private def readInput(path: String): List[String] = {
-    fromFile(path).getLines.toList
+  private def readInput(): List[String] = {
+    fromFile(inputPath).getLines.toList
   }
 
-  def getData: List[String] = {
-    if (!new File(inputPath).exists) {
-      downloadInput(inputPath, year, day)
+   lazy val input: List[String] = {
+    if (!Files.exists(Paths.get(inputPath))) {
+      downloadInput()
     }
-    readInput(inputPath)
+    readInput()
   }
 
   private def writeToDisk(part1: String, part2: String): Unit = {
@@ -46,4 +45,10 @@ class API(basePath: String, year: Int, day: Int, cookie: String) {
     writeToDisk(part1, part2)
   }
 
+}
+
+object API {
+  def fromConfig(config: Config): API = {
+    new API(config.basePath, config.year, config.day, config.cookie)
+  }
 }

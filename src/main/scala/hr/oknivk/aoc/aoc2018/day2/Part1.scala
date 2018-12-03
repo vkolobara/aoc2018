@@ -1,9 +1,8 @@
-package hr.oknivk.aoc2018.day2
+package hr.oknivk.aoc.aoc2018.day2
 
-import hr.oknivk.aoc2018.common.Solution
+import hr.oknivk.aoc.common.Solution
 
 class Part1 extends Solution{
-  override def name: String = "day2-part1"
 
   override def solve(input: List[String]): String = {
     val x = input.map(i => {

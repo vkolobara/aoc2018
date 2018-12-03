@@ -17,3 +17,9 @@ a
 1src/main/scala/hr/oknivk/aoc2018/day2/Part2.scala,2/7/278cb2fc4656ad07d82a671a9588349a9cfad755
 `
 0src/main/scala/hr/oknivk/aoc2018/day2/Main.scala,5/1/51f8dc93ec113b31947f44283c6321460351ae3e
+`
+0src/main/scala/hr/oknivk/aoc2018/day3/Main.scala,9/7/971cf2124efcc0a1ebeb17e231d0d0f5ba118424
+a
+1src/main/scala/hr/oknivk/aoc2018/day3/Part1.scala,5/3/53893b98e008d2da9abaf12b6bde6c6064835a11
+a
+1src/main/scala/hr/oknivk/aoc2018/day3/Part2.scala,7/8/78dbbacca0389d1ec2f8a3a862a89359a9e9c22d

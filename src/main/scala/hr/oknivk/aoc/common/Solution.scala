@@ -1,4 +1,4 @@
-package hr.oknivk.aoc2018.common
+package hr.oknivk.aoc.common
 
 trait Solution {
   def solve(input: List[String]): String

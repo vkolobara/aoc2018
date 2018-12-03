@@ -1,9 +1,8 @@
-package hr.oknivk.aoc2018.day2
+package hr.oknivk.aoc.aoc2018.day2
 
-import hr.oknivk.aoc2018.common.Solution
+import hr.oknivk.aoc.common.Solution
 
 class Part2 extends Solution{
-  override def name: String = "day2-part2"
 
   override def solve(input: List[String]): String = {
     val res = cross(input, input.tail).find(i => diff(i._1, i._2).length == 1)

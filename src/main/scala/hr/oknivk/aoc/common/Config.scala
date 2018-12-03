@@ -1,10 +1,11 @@
-package hr.oknivk.aoc2018.common
+package hr.oknivk.aoc.common
 
 import com.typesafe.config
 import com.typesafe.config.{Config, ConfigFactory}
 
-class Config {
-  private val conf: config.Config = ConfigFactory.load()
+class Config(path: String = "application.conf") {
+  private val conf: config.Config = ConfigFactory.load(path)
+
 
   lazy val basePath: String = conf.getString("aoc.basePath")
   lazy val year: Int = conf.getInt("aoc.year")
