@@ -1,18 +1,4 @@
 
-b
-2src/main/scala/hr/oknivk/aoc/common/Solution.scala,0/3/0363468360e34edcacda344b029db0e19f033372
-e
-5src/main/scala/hr/oknivk/aoc/aoc2018/day3/Part2.scala,e/a/ea75b7c90aa237928901c689df2d78b59e928566
-e
-5src/main/scala/hr/oknivk/aoc/aoc2018/day3/Part1.scala,4/6/46d302a3f2d39163fbb9103298c0e0833d5a525b
-e
-5src/main/scala/hr/oknivk/aoc/aoc2018/day2/Part1.scala,f/6/f6c11817129663499471c0ae37810d7dc805585b
-e
-5src/main/scala/hr/oknivk/aoc/aoc2018/day2/Part2.scala,0/7/071ff08569ccb531fe8068a8a12a47559508fc37
-e
-5src/main/scala/hr/oknivk/aoc/aoc2018/day1/Part1.scala,a/f/afe310dab988ba5f7716008df561650a38bc00bf
-e
-5src/main/scala/hr/oknivk/aoc/aoc2018/day1/Part2.scala,8/d/8d2023c6930a7525f84e1a4499d142b309868bcf
 ^
 .src/main/scala/hr/oknivk/aoc/common/Main.scala,b/d/bd5335d4e40d706769c1718c11b46c222913145a
 ]
