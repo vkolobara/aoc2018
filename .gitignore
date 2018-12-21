@@ -87,5 +87,6 @@ project/plugins/project/
 *.log
 
 src/main/resources/*.conf
+.ensime_cache
 
 # End of https://www.gitignore.io/api/sbt,scala

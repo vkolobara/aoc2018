@@ -12,31 +12,54 @@ class Day6(config: Config) extends Day(config: Config) {
 
   override protected def part1(input: List[String]): String = {
     val in = input.map(mapToPos)
-    println(in.length)
-    println(getCandidates(in).length)
-    println(getDistances(in))
-
-    ""
+    val areas = getAreas(in)
+    areas.maxBy(_._2)._2.toString
   }
 
-  def getDistances(input: List[Position]): Map[(Position, Position), Int] = {
-    (for {
-      p1 <- input
-      p2 <- input
-      if p1 != p2
-    } yield (p1, p2) -> p1.distance(p2)).toMap
+  private def getAreas(in: List[Position]): Map[Position, Int] = {
+    val minX = in.minBy(_.x).x
+    val maxX = in.maxBy(_.x).x
+    val minY = in.minBy(_.y).y
+    val maxY = in.maxBy(_.y).y
+
+    val vals = for {
+      x <- minX to maxX
+      y <- minY to maxY
+
+      p = Position(x, y)
+
+      dist = in.map(p.distance).min
+      c = in.filter(p.distance(_) == dist)
+      if c.length == 1
+    } yield (p, c.head)
+
+    vals.groupBy(_._2).mapValues(_.map(_._1)).filterNot(p => p._2.exists(c => c.x == minX || c.x == maxX || c.y == minY || c.y == maxY)).mapValues(_.size)
   }
 
-  def getCandidates(input: List[Position]): List[Position] = {
-    val minX = input.minBy(_.x).x
-    val minY = input.minBy(_.y).y
-    val maxX = input.maxBy(_.x).x
-    val maxY = input.maxBy(_.y).y
-
-    input.filterNot(v => v.x == minX || v.x == maxX || v.y == minY || v.y == maxY)
+  override protected def part2(input: List[String]): String = {
+    val in = input.map(mapToPos)
+    regionSize(in, 10000).toString
   }
 
-  override protected def part2(input: List[String]): String = ""
+  private def regionSize(in: List[Position], s: Int): Int = {
+    val minX = in.minBy(_.x).x
+    val maxX = in.maxBy(_.x).x
+    val minY = in.minBy(_.y).y
+    val maxY = in.maxBy(_.y).y
+
+    val vals = for {
+      x <- minX to maxX
+      y <- minY to maxY
+
+      p = Position(x, y)
+
+      dist = in.map(p.distance).sum
+      if dist < s
+    } yield p
+
+    vals.size
+
+  }
 
   case class Position(x: Int, y: Int) {
     def distance(other: Position): Int = {
