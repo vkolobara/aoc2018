@@ -15,3 +15,5 @@ d
 4src/main/scala/hr/oknivk/aoc/aoc2018/day1/Day1.scala,0/d/0d887f45c825b36a3da7376aa8ad719b4ba849ba
 S
 #src/main/resources/application.conf,3/5/3583a03abc61f9a983b67fd3810cb1f4192490b6
+d
+4src/main/scala/hr/oknivk/aoc/aoc2018/day4/Day4.scala,f/e/fea3e90c877d85f7daea2aa3d16ff696007cb055
